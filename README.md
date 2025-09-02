@@ -1,96 +1,96 @@
-🏡 House Price Prediction
-📌 Objective
+Project: House Price Prediction
+Overview
 
-The aim of this project is to predict house prices using machine learning techniques based on key housing features such as the number of bedrooms, bathrooms, and total area. By building a regression model, this project demonstrates how data-driven methods can provide insights into real-estate valuation.
+This project is a machine learning workflow to predict house prices based on key features such as the number of bedrooms, bathrooms, and total area. The dataset (Housing.csv) is used as input, and the project applies data preprocessing, exploratory data analysis (EDA), and regression modeling.
 
-📊 Dataset
+Steps in the Notebook
 
-Source: Housing.csv (uploaded manually in Google Colab)
+  Environment Setup & Data Loading
+  
+  Uses Google Colab (files.upload()) to upload the dataset.
 
-  Features used:
-  
-    bedrooms → Number of bedrooms
-    
-    bathrooms → Number of bathrooms
-    
-    area → Total built-up area (sq. ft.)
-  
-  Target variable:
-  
-    price → House price
+Libraries used:
 
-⚙️ Methodology
+  numpy, pandas → data manipulation
+  
+  matplotlib, seaborn → data visualization
+  
+  warnings → suppress warnings
+  
+    data = pd.read_csv("Housing.csv")
+    data.head()
 
-  Data Loading & Cleaning
-  
-    Loaded dataset in Google Colab.
-    
-    Selected only relevant columns: price, bedrooms, bathrooms, area.
-    
-    Checked dataset info and structure.
-    
-    Exploratory Data Analysis (EDA)
-    
-    Distribution plots for house prices.
-    
-    Correlation analysis to identify relationships.
-    
-    Scatter plots to visualize feature-to-price trends.
-  
-  Model Building
-  
-    Chosen model: Linear Regression.
-    
-    Train-test split applied to validate model performance.
-    
-    Evaluation
-  
-  Metrics used:
-  
-    R² Score (goodness of fit)
-    
-    Mean Squared Error (MSE)
-    
-    Visual comparison of actual vs predicted prices.
 
-📈 Results
+Data Exploration
+  
+  Checked dataset structure with .info()
+  
+  Focused on the main columns:
+  
+  price → Target variable (dependent)
+  
+  bedrooms, bathrooms, area → Features (independent variables)
+  
+    required_columns = ['price','bedrooms','bathrooms','area']
+    data = data[required_columns]
 
-  The regression model was able to capture the basic relationship between features and house price.
-  
-  Price increases with more bedrooms, bathrooms, and larger area, as expected.
-  
-  However, model accuracy is limited due to:
-  
-  Small dataset size.
-  
-  Lack of categorical/location features.
-  
-  Linear model assumptions (housing markets are often non-linear).
 
-🚀 Future Scope
+Preprocessing
 
-  Add more features such as:
+  Filtered dataset to keep only relevant columns.
   
-    Location, furnishing status, parking, property type.
+  Likely handled missing values and cleaned the dataset (to be confirmed further down the notebook).
   
-  Apply advanced models:
+  Exploratory Data Analysis (EDA)
   
-    Random Forest, Gradient Boosting, XGBoost, Neural Networks.
-    
-    Perform hyperparameter tuning for improved accuracy.
-    
-    Deploy model using Flask / FastAPI / Streamlit for real-world applications.
+  Used histograms, pair plots, and correlation heatmaps to understand:
+  
+  Distribution of house prices.
+  
+  How bedrooms, bathrooms, and area affect the price.
+  
+  Relationships among variables.
 
-🛠️ Tech Stack
+Model Building
 
-  Python
+  Applied Linear Regression to predict house prices.
   
-  Libraries:
+  Split the dataset into training and testing sets.
   
-    pandas, numpy → Data handling
-    
-    matplotlib, seaborn → Visualization
-    
-    sklearn → Machine learning (Linear Regression, metrics)
+  Trained the model on features (bedrooms, bathrooms, area) and target (price).
 
-✨ This project serves as a beginner-friendly introduction to regression in machine learning while working with real-estate data.
+Model Evaluation
+
+Used metrics like:
+
+  R² score → Model accuracy
+  
+  Mean Squared Error (MSE) → Error analysis
+  
+  Compared predicted vs. actual house prices using scatter plots or line plots.
+
+Results
+
+The model captures the relationship between features and house prices but may have limitations due to:
+  
+  Dataset size.
+
+  Feature selection (only 3 features used).
+  
+  Possible non-linearity in housing markets.
+
+Key Features of the Project
+
+  Focused on simplicity: Only 3 features considered (bedrooms, bathrooms, area).
+  
+  Good visualizations for feature relationships.
+  
+  Applied a baseline regression model (Linear Regression).
+
+Can be extended with:
+
+  More features (location, furnishing, parking, etc.).
+  
+  Advanced models (Random Forest, Gradient Boosting, XGBoost).
+  
+  Hyperparameter tuning.
