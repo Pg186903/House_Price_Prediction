@@ -5,17 +5,17 @@ This project is a machine learning workflow to predict house prices based on key
 
 Steps in the Notebook
 
-  Environment Setup & Data Loading
+  # Environment Setup & Data Loading
   
-  Uses Google Colab (files.upload()) to upload the dataset.
+  # Uses Google Colab (files.upload()) to upload the dataset.
 
 Libraries used:
 
-  numpy, pandas → data manipulation
+  # numpy, pandas → data manipulation
   
-  matplotlib, seaborn → data visualization
+  # matplotlib, seaborn → data visualization
   
-  warnings → suppress warnings
+  # warnings → suppress warnings
   
     data = pd.read_csv("Housing.csv")
     data.head()
@@ -23,13 +23,13 @@ Libraries used:
 
 Data Exploration
   
-  Checked dataset structure with .info()
+  # Checked dataset structure with .info()
   
-  Focused on the main columns:
+  # Focused on the main columns:
   
-  price → Target variable (dependent)
+  # price → Target variable (dependent)
   
-  bedrooms, bathrooms, area → Features (independent variables)
+  # bedrooms, bathrooms, area → Features (independent variables)
   
     required_columns = ['price','bedrooms','bathrooms','area']
     data = data[required_columns]
@@ -37,60 +37,60 @@ Data Exploration
 
 Preprocessing
 
-  Filtered dataset to keep only relevant columns.
+  # Filtered dataset to keep only relevant columns.
   
-  Likely handled missing values and cleaned the dataset (to be confirmed further down the notebook).
+  # Likely handled missing values and cleaned the dataset (to be confirmed further down the notebook).
   
-  Exploratory Data Analysis (EDA)
+  # Exploratory Data Analysis (EDA)
   
-  Used histograms, pair plots, and correlation heatmaps to understand:
+  # Used histograms, pair plots, and correlation heatmaps to understand:
   
-  Distribution of house prices.
+  # Distribution of house prices.
   
-  How bedrooms, bathrooms, and area affect the price.
+  # How bedrooms, bathrooms, and area affect the price.
   
-  Relationships among variables.
+  # Relationships among variables.
 
 Model Building
 
-  Applied Linear Regression to predict house prices.
+  # Applied Linear Regression to predict house prices.
   
-  Split the dataset into training and testing sets.
+  # Split the dataset into training and testing sets.
   
-  Trained the model on features (bedrooms, bathrooms, area) and target (price).
+  # Trained the model on features (bedrooms, bathrooms, area) and target (price).
 
 Model Evaluation
 
 Used metrics like:
 
-  R² score → Model accuracy
+  # R² score → Model accuracy
   
-  Mean Squared Error (MSE) → Error analysis
+  # Mean Squared Error (MSE) → Error analysis
   
-  Compared predicted vs. actual house prices using scatter plots or line plots.
+  # Compared predicted vs. actual house prices using scatter plots or line plots.
 
 Results
 
 The model captures the relationship between features and house prices but may have limitations due to:
   
-  Dataset size.
+  # Dataset size.
 
-  Feature selection (only 3 features used).
+  # Feature selection (only 3 features used).
   
-  Possible non-linearity in housing markets.
+  # Possible non-linearity in housing markets.
 
 Key Features of the Project
 
-  Focused on simplicity: Only 3 features considered (bedrooms, bathrooms, area).
+  # Focused on simplicity: Only 3 features considered (bedrooms, bathrooms, area).
   
-  Good visualizations for feature relationships.
+  # Good visualizations for feature relationships.
   
-  Applied a baseline regression model (Linear Regression).
+  # Applied a baseline regression model (Linear Regression).
 
 Can be extended with:
 
-  More features (location, furnishing, parking, etc.).
+  # More features (location, furnishing, parking, etc.).
   
-  Advanced models (Random Forest, Gradient Boosting, XGBoost).
+  # Advanced models (Random Forest, Gradient Boosting, XGBoost).
   
-  Hyperparameter tuning.
+  # Hyperparameter tuning.
